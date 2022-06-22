@@ -22,8 +22,8 @@ namespace ECommerceDemo.Persistence
             configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../../Presentation/ECommerceDemo.API"));
             configurationManager.AddJsonFile("appsettings.json");
 
-            services.AddSingleton<IProductService, ProductService>();
-            services.AddDbContext<ECommerceDemoPostgresqlContext>(options => options.UseNpgsql(configurationManager.GetConnectionString("PostgreSql")),ServiceLifetime.Singleton);
+            services.AddScoped<IProductService, ProductService>();
+            services.AddDbContext<ECommerceDemoPostgresqlContext>(options => options.UseNpgsql(configurationManager.GetConnectionString("PostgreSql")));
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
             services.AddScoped<IProductReadRepository, ProductReadRepository>();
