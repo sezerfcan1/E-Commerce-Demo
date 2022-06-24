@@ -3,6 +3,7 @@ using System;
 using ECommerceDemo.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ECommerceDemo.Persistence.Migrations
 {
     [DbContext(typeof(ECommerceDemoPostgresqlContext))]
-    partial class ECommerceDemoPostgresqlContextModelSnapshot : ModelSnapshot
+    [Migration("20220623162142_mig_2")]
+    partial class mig_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
